@@ -1,0 +1,10 @@
+package o1
+
+import constants._
+
+// Define class Bug here.
+class Bug(sijainti: Pos) {
+  
+  var pos = sijainti
+  
+}

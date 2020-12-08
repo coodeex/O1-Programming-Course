@@ -1,0 +1,22 @@
+package o1.train
+
+object käynnistys extends App {
+  val a = new Train("juna")
+  val b = new SleepingCar(5)
+  
+  a.addCar(b)
+  println(b.cabinReservations)
+  println(a.car(1))
+  println( b.numberOfPlaces)
+  println( b.emptyCabinCount)
+  println( b.reservePlaces(1))
+  println( b.emptyCabinCount)
+  println( b.findEmptyCabin)
+  println( b.numberOfFreePlaces)
+  println()
+  println()
+  println()
+  println()
+  println()
+  println()
+}

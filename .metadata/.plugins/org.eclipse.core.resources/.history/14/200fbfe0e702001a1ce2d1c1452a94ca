@@ -1,0 +1,44 @@
+package o1.election
+
+import scala.collection.mutable.Buffer
+
+class District(val name: String, val seats: Int, val candidates: Vector[Candidate]) {
+  
+  
+  override def toString: String = {
+    this.name + ": " + this.candidates.size + " candidates, " + this.seats + " seats"
+  }
+  
+  def printCandidates(): Unit = this.candidates.foreach(kandi => println(kandi.toString))
+    
+  def candidatesFrom(party: String): Vector[Candidate]= {
+    this.candidates.filter(_.party == party)
+  }
+  
+  private val luettelo = this.candidates.map(jasen => jasen.party -> jasen )
+  
+  /** Returns the total number of votes received by the given candidates. */
+  private def countVotes(candidates: Vector[Candidate]) = {
+    var voteCount = 0
+    for (candidate <- candidates) {
+      voteCount += candidate.votes
+    }
+    voteCount
+  }
+  
+  def topCandidate: Candidate = {
+    candidates.maxBy(_.votes)
+  }
+  
+  def totalVotes: Int = {
+    this.candidates.foldLeft(0)(_ + _.votes)
+  }
+  
+  def totalVotes(party: String): Int = {
+    this.candidates.foldLeft(0)( (sum,kandi) => 
+      (if(kandi.party==party){
+        kandi.votes + sum
+       }else{sum}))
+  }
+  
+}

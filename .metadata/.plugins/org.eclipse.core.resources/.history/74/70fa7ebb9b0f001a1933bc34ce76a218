@@ -1,0 +1,5 @@
+package o1.train
+
+object käynnistys extends App {
+  val a = new Train("juna")
+}

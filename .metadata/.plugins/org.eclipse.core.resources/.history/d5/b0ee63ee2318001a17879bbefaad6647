@@ -1,0 +1,9 @@
+package o1.family
+
+object appi extends App {
+  val a = new FamilyMember("q")
+  val b = new FamilyMember("w")
+  val c = new FamilyMember("e")
+  val d = new FamilyMember("r")
+  val e = new FamilyMember("t")
+}

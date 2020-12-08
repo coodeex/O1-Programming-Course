@@ -1,0 +1,13 @@
+Peli alkaa metroasemalta. Maalina on jatkot.
+
+Tehtävänä on
+-päästä läpi tentistä
+-mennä Smökin bileisiin, koska se avaa paikan jatkoille
+-mennä jatkoille (+bonus, jos löytää sisätossut ja menee jatkoille ne jalassa)
+
+huom
+-pelaaja kuolee nälkään, jos se ei syö yhdeksään tuntiin
+-rahat voi loppua
+-aikaraja on kello 5 aamulla
+
+AdventureTextUi:ta on muutettu

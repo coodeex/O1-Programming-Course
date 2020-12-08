@@ -1,0 +1,96 @@
+  # Heimon jäsen on melko passiivisaggressiivinen laumaeläin.
+  # Kun lähistöllä ei ole vihollisia, niin se liikkuu huoletta.
+  # Vihollisen ollessa lähistöllä se pysähtyy ja pyrkii kääntymään vihollista kohti.
+  # Hyökkäämään se lähtee vasta, kun lähellä on 3 tai useampi saman heimon jäsen.
+  # Eli hyökkäystaktiikka on 3 vs 1 ylivoima.
+
+start:
+  goto check
+  
+  
+check:
+  enemiesnear
+  ifgt radar 0 endfight
+  enemiesdir 0
+  ifgt radar 0 attack0
+  enemiesdir 1
+  ifgt radar 0 attack1
+  enemiesdir 2
+  ifgt radar 0 attack2
+  enemiesdir 3
+  ifgt radar 0 attack3
+  ifnempty attack1
+  move
+  goto start
+  
+
+endfight:
+  
+  friendsnear
+  set mem radar
+  enemiesnear
+  set mem2 radar
+  
+  callsub overpower
+  
+  enemiesdir 0
+  ifgt radar 0 eattack0
+  enemiesdir 1
+  ifgt radar 0 eattack1
+  enemiesdir 2
+  ifgt radar 0 eattack2
+  enemiesdir 3
+  ifgt radar 0 eattack3
+  iffriend eattack1
+  ifwall eattack2
+  spin
+  goto start
+  
+overpower:
+  enemiesdir 0
+  ifgt radar 0 overpower2
+  return
+overpower2:
+  ifgt mem 2 overpower3
+  return
+overpower3:
+  ifeq mem2 1 attack0
+  return
+  
+eattack0:
+  wait
+  goto endfight
+
+eattack1:
+  spin
+  goto endfight
+  
+eattack2:
+  uturn
+  goto endfight
+
+eattack3:
+  switch
+  spin
+  switch
+  goto endfight
+
+
+
+attack0:
+  move
+  goto start
+
+attack1:
+  spin
+  goto start
+  
+attack2:
+  uturn
+  goto start
+
+attack3:
+  switch
+  spin
+  switch
+  goto start

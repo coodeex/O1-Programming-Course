@@ -1,0 +1,32 @@
+package o1
+import o1._
+
+object Takiaisohjelma1 extends App {
+
+  val takiainen = new Takiainen
+
+  val leveys = 800
+  val korkeus = 500
+  val tausta = rectangle(leveys, korkeus, White)
+  val takiaisenKuva = circle(40, YellowGreen)
+  
+  
+
+  val nakyma = new View(takiaisenKuva) {
+  
+    def makePic(sij: Pos) {
+    
+      tausta.place(takiaisenKuva, takiainen.sijainti)
+    }
+  
+    override def onMouseMove(kohta: Pos) = {
+      takiainen.sijainti = kohta
+    }
+  
+    val nakyma = new View(takiainen) {
+      def makePic = tausta.place(circle(2, White), new Pos(100, 100))
+    }
+    
+    nakyma.start()
+  }
+}

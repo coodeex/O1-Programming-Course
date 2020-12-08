@@ -1,0 +1,21 @@
+package o1
+
+import constants._
+
+// Define class Bug here.
+class Bug(var pos: Pos) {
+  
+  val radius = BugRadius
+  
+  def move(paljo: Double) = this.pos = this.pos.addY(paljo)
+  
+  def flap(strength: Double) = {
+    move(-strength)
+  }
+  
+  def fall() = {
+    move(FallingSpeed)
+  }
+  
+  override def toString = "center at " + this.pos + ", radius " + this.radius
+}

@@ -1,0 +1,69 @@
+
+start:
+  goto endfight
+  
+  
+check:
+  
+  ifnempty attack1
+  enemiesdir 0
+  ifgt radar 0 attack0
+  enemiesdir 1
+  ifgt radar 0 attack1
+  enemiesdir 2
+  ifgt radar 0 attack2
+  enemiesdir 3
+  ifgt radar 0 attack3
+  move
+  goto start
+  
+
+endfight:
+  enemiesdir 0
+  ifgt radar 0 eattack0
+  enemiesdir 1
+  ifgt radar 0 eattack1
+  enemiesdir 2
+  ifgt radar 0 eattack2
+  enemiesdir 3
+  ifgt radar 0 eattack3
+  spin
+  goto endfight
+  
+eattack0:
+  wait
+  goto endfight
+
+eattack1:
+  spin
+  goto endfight
+  
+eattack2:
+  uturn
+  goto endfight
+
+eattack3:
+  switch
+  spin
+  switch
+  goto endfight
+
+
+
+attack0:
+  move
+  goto start
+
+attack1:
+  spin
+  goto start
+  
+attack2:
+  uturn
+  goto start
+
+attack3:
+  switch
+  spin
+  switch
+  goto start

@@ -1,0 +1,23 @@
+package o1
+
+import constants._
+
+class Game {
+
+    val bug = new Bug(new Pos(100, 40))
+    val obstacle = new Obstacle(70, new Pos(1000, 100))
+    
+    def timePasses() = {
+      this.bug.fall()
+      this.obstacle.approach()
+    }
+    
+    def activateBug() = this.bug.flap(15) 
+
+
+}
+
+
+  // Your code goes here. Please add only what is requested by the ebook. To avoid
+  // confusing our automatic assessment system, please don't invent additions of your own
+  // here (at least not until you're done with the ebook’s official FlappyBug assignments).

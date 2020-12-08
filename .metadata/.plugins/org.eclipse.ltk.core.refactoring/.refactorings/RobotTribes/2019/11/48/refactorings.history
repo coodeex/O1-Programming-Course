@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;RobotTribes/tribes/Untitled 1&apos; to &apos;unto.tribe&apos;" description="Rename resource &apos;Untitled 1&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="tribes/Untitled 1" name="unto.tribe" stamp="1575138439401" updateReferences="true"/>
+</session>

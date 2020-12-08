@@ -1,0 +1,22 @@
+package o1
+
+object Takiaisohjelma1 extends App {
+
+  val takiainen = new Takiainen
+
+  val leveys = 800
+  val korkeus = 500
+  val tausta = rectangle(leveys, korkeus, White)
+  val takiaisenKuva = circle(40, YellowGreen)
+  
+  //var sijainti = (0,0)
+  
+  
+  def makePic(sijai: Pos) ={
+    val picci = takiaisenKuva; takiainen.sijainti
+    picci
+  }
+
+  val kuva = picci.onto(tausta)
+  show(kuva)
+}

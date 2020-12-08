@@ -1,0 +1,19 @@
+package o1.family
+
+object appi extends App {
+  val a = new FamilyMember("q")
+  val b = new FamilyMember("w")
+  val c = new FamilyMember("e")
+  val d = new FamilyMember("r")
+  val e = new FamilyMember("t")
+
+  val aa= new FamilyMember("aa", Vector(a,b))
+  val bb= new FamilyMember("bb", Vector(aa, c,d,e))
+  val cc= new FamilyMember("cc", Vector(aa, bb, a,b,c))
+  
+ // println(bb.numberOfDescendingGenerations)
+  println(bb.numberOfDescendants)
+  println(aa.numberOfDescendants)
+ // println(bb.children.size)
+
+}
